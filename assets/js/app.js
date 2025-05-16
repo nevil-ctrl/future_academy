@@ -38,6 +38,18 @@ document.addEventListener('click', function(e) {
   }
 });
 
+//Показ пороля
+
+  document.getElementById('togglePassword').addEventListener('click', function () {
+            let passwordField = document.getElementById('password');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                this.textContent = 'Скрыть пароль';
+            } else {
+                passwordField.type = 'password';
+                this.textContent = 'Показать пароль';
+            }
+        });
 
 
  
