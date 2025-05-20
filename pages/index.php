@@ -1,6 +1,6 @@
 
 <?php
-require_once __DIR__ . '/../router.php';
+
 require_once __DIR__ . '/../config/db.php';
 include __DIR__ . '/../layout/header.php';
 include __DIR__ . '/../layout/nav.php';

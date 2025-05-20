@@ -30,6 +30,7 @@
       <div class="login">
         <img src="../assets/img/svg/user.svg" alt="">
         <a href="/signup" class="sign-in">Войти</a>
+        <a href="/signin" class="sign-in">Регистрация</a>
       </div>
     </div>
   </nav>
