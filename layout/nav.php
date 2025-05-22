@@ -29,8 +29,7 @@
       <div class="phone_number">8 800 950-33-98</div>
       <div class="login">
         <img src="../assets/img/svg/user.svg" alt="">
-        <a href="/signup" class="sign-in">Войти</a>
-        <a href="/signin" class="sign-in">Регистрация</a>
-      </div>
+        <a href="/signup" class="sign-in">Регистрация</a>
+      </div>  
     </div>
   </nav>
