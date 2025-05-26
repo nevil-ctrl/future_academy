@@ -1,30 +1,28 @@
-<div class="banner">
-  <div class="container banner_content">
-    <!-- Левая часть с текстом -->
-    <div class="banner_left">
-      <h1 class="banner_title">Веб-разработчик</h1>
-      <p class="banner_description">
-        Программа для тех, кто... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis tellus feugiat, posuere magna et, scelerisque leo. In scelerisque pulvinar sem, et gravida mi tincidunt nec.
+<section class="banner">
+  <div class="container banner__container">
+    <div class="banner__left">
+      <h1 class="banner__title">Веб-разработчик</h1>
+      <p class="banner__desc">
+        Освойте востребованную профессию с нуля. Практика, поддержка наставников, реальные проекты и современный подход к обучению.
       </p>
-      <div class="banner_details">
-        <div class="detail_item">
-          <span class="label">Срок обучения:</span>
-          <span class="value">5 лет</span>
+      <div class="banner__details">
+        <div class="banner__detail">
+          <span class="banner__label">Срок обучения:</span>
+          <span class="banner__value">5 лет</span>
         </div>
-        <div class="detail_item">
-          <span class="label">Режим занятий:</span>
-          <span class="value">2 раза в неделю по 2 академических часа</span>
+        <div class="banner__detail">
+          <span class="banner__label">Режим занятий:</span>
+          <span class="banner__value">2 раза в неделю по 2 академических часа</span>
         </div>
       </div>
-      <h2 class="price">от 4 350 ₽ в месяц</h2>
-      <h2 class="free_lesson">1 занятие бесплатно</h2>
-      <button class="banner_button">Записаться на пробное занятие</button>
+      <div class="banner__price-block">
+        <span class="banner__price">от 4 350 ₽/мес</span>
+        <span class="banner__free">1 занятие бесплатно</span>
+      </div>
+      <a href="#" class="banner__btn">Записаться на пробное занятие</a>
     </div>
-
-    <!-- Правая часть с изображением -->
-    <div class="banner_right">
-      <section class="banner_img">
-      </section>
+    <div class="banner__right">
+      <img class="banner__img" src="assets/img/png/banner_img.png" alt="Баннер" />
     </div>
   </div>
-</div>
+</section>

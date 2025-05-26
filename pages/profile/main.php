@@ -27,4 +27,5 @@
     </div>
   </div>
   <a href="/" class="logout-btn">Выйти</a>
+  <a href="/rewiews" class="logout-btn">Написать отзыв</a>
 </div>

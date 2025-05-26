@@ -1,11 +1,11 @@
 <div class="auth-container">
     <div class="auth-title">Регистрация</div>
     <form action="/signup" method="post" autocomplete="off">
-        <input class="auth-input" type="text" name="name" placeholder="Имя" required>
+        <input class="auth-input" type="text" name="username" placeholder="Имя" required>
         <input class="auth-input" type="email" name="email" placeholder="Email" required>
         <div class="input-group">
-            <input class="auth-input" id="reg-password" type="password" name="password" placeholder="Пароль" required>
-            <button class="auth-toggle-btn" type="button" id="toggleRegPassword" title="Показать/скрыть пароль"></button>
+            <input class="auth-input" id="password" type="password" name="password" placeholder="Пароль" required>
+            <button class="auth-toggle-btn" type="button" id="togglePassword">Показать</button>
         </div>
         <button class="auth-submit-btn" type="submit" name="register">Зарегистрироваться</button>
     </form>

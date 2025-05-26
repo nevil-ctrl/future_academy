@@ -12,7 +12,7 @@
         <input class="auth-input" type="email" name="email" placeholder="Email" required>
         <input class="auth-input" id="password" type="password" name="password" placeholder="Пароль" required>
         <div class="auth-btn-group">
-            <button class="auth-toggle-btn" type="button" id="togglePassword" title="Показать/скрыть пароль"></button>
+            <button class="auth-toggle-btn" type="button" id="togglePassword">Показать</button>
             <button class="auth-submit-btn" type="submit" name="login">Войти</button>
         </div>
     </form>

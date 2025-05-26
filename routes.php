@@ -7,6 +7,9 @@ require_once __DIR__ . '/app/controllers/AuthController.php';
 
 get('/', 'pages/index.php');
 get('/profile', 'pages/profile/main.php');
+get('/all-courses', 'pages/courses.php');
+get('/events', 'pages/events.php');
+get('/rewiews', 'pages/add-rewiews.php');
 
 // Регистрация
 get('/signup', function () {
