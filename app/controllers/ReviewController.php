@@ -1,57 +1,42 @@
-<?php 
-require_once __DIR__ . '/../app/models/Review.php';
+<?php
+require_once __DIR__ . '/../models/Review.php';
+
+
 class ReviewController {
-    private $reviewModel;
+    private $model;
 
     public function __construct($db) {
-        $this->reviewModel = new ReviewModel($db);
+        $this->model = new ReviewModel($db);
     }
 
     public function index() {
-        $reviews = $this->reviewModel->all();
-        $stats = $this->reviewModel->getStats();
-        include 'views/reviews/list.php';
+        $reviews = $this->model->getAll();
+        include __DIR__ . '/../views/reviews/index.php';
     }
 
-    public function create() {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_review'])) {
-            $data = [
-                'name' => $_POST['name'],
-                'email' => $_POST['email'],
-                'rating' => (int)$_POST['rating'],
-                'review_text' => $_POST['review_text']
-            ];
-            $this->reviewModel->create($data);
-            $message = "Отзыв успешно добавлен!";
-            $messageType = "success";
-        }
+ public function create($data) {
+    $stmt = $this->db->prepare("INSERT INTO reviews (name, email, rating, review_text, created_at) VALUES (?, ?, ?, ?, NOW())");
+    return $stmt->execute([
+        $data['name'],
+        $data['email'],
+        $data['rating'],
+        $data['comment'] // Используем 'comment' — см. ниже
+    ]);
+}
 
-        $reviews = $this->reviewModel->all();
-        $stats = $this->reviewModel->getStats();
-        include 'views/reviews/list.php';
+
+    public function edit($id) {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->model->update($id, $_POST);
+            header('Location: /reviews');
+            exit;
+        }
+        $review = $this->model->getById($id);
+        include __DIR__ . '/../views/reviews/edit.php';
     }
 
     public function delete($id) {
-        $this->reviewModel->delete($id);
-        header('Location: /');
-    }
-
-    public function edit($id) {
-        $review = $this->reviewModel->find($id);
-        include 'views/reviews/edit.php';
-    }
-
-    public function update($id) {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $data = [
-                'name' => $_POST['name'],
-                'email' => $_POST['email'],
-                'rating' => (int)$_POST['rating'],
-                'review_text' => $_POST['review_text']
-            ];
-            $this->reviewModel->update($id, $data);
-        }
-
-        header('Location: /');
+        $this->model->delete($id);
+        header('Location: /reviews');
     }
 }
